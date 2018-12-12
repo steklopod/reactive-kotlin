@@ -10,6 +10,7 @@ allprojects {
     repositories {
         gradlePluginPortal()
     }
+   
 }
 
 subprojects { tasks { } }

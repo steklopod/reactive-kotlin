@@ -8,7 +8,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     application
-    val kotlinVersion = "1.3.10"
+    val kotlinVersion = "1.3.11"
     kotlin("jvm") version kotlinVersion
     id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion
     id("com.github.johnrengelman.shadow") version "4.0.2"
@@ -42,7 +42,7 @@ tasks {
 dependencyManagement {
     imports {
         mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.0.RELEASE"){
-            bomProperty("kotlin.version", "1.3.10")
+            bomProperty("kotlin.version", "1.3.11")
         }
     }
 }
