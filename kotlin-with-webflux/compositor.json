@@ -1,0 +1,138 @@
+{
+  "name": "cdimascio/kotlin-swagger-spring-functional-template",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "",
+  "branch": "",
+  "style": {
+    "name": "Default",
+    "componentSet": {
+      "nav": "nav/BasicNav",
+      "header": "header/BannerHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "fontWeight": 400,
+    "bold": 600,
+    "lineHeight": 1.5,
+    "typeScale": [
+      72,
+      48,
+      24,
+      20,
+      16,
+      14,
+      12
+    ],
+    "monospace": "Menlo, monospace",
+    "heading": {
+      "fontFamily": null,
+      "fontStyle": null,
+      "fontWeight": 600,
+      "lineHeight": 1.25,
+      "textTransform": null,
+      "letterSpacing": null
+    },
+    "h0": {},
+    "h1": {},
+    "h2": {},
+    "h3": {},
+    "h4": {},
+    "h5": {},
+    "h6": {},
+    "alternativeText": {},
+    "space": [
+      0,
+      8,
+      16,
+      32,
+      48,
+      64,
+      96
+    ],
+    "layout": {
+      "maxWidth": 1024,
+      "centered": false
+    },
+    "colors": {
+      "text": "#111",
+      "background": "#fff",
+      "primary": "#08e",
+      "secondary": "#059",
+      "highlight": "#e08",
+      "border": "#ddd",
+      "muted": "#eee"
+    },
+    "border": {
+      "width": 1,
+      "radius": 2
+    },
+    "link": {},
+    "button": {
+      "hover": {
+        "boxShadow": "inset 0 0 0 999px rgba(0, 0, 0, .125)"
+      }
+    },
+    "input": {},
+    "body": {
+      "margin": 0
+    },
+    "breakpoints": {
+      "xs": "@media screen and (max-width:40em)",
+      "sm": "@media screen and (min-width:40em)",
+      "md": "@media screen and (min-width:52em)",
+      "lg": "@media screen and (min-width:64em)"
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/steklopod/Kotlin-with-WebFlux",
+          "text": "GitHub"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "kotlin-swagger-spring-functional-template",
+      "subhead": "Kotlin Webflux functional application with api request validation and interactive api doc",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "kotlin-swagger-spring-functional-template: Kotlin Webflux functional application with api request validation and interactive api doc",
+          "url": ""
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "cdimascio",
+          "repo": "kotlin-swagger-spring-functional-template"
+        }
+      ]
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "<h1>kotlin-swagger-spring-functional</h1>\n<p><img src=\"https://api.travis-ci.org/cdimascio/kotlin-swagger-spring-functional-template.svg?branch=master\"><img src=\"https://img.shields.io/badge/license-Apache%202.0-blue.svg\"></p>\n<p>A project template for <em>Kotlin Spring WebFlux</em>. The template features automatic request validation and interactive API documentation using an <em>OpenApi 3.0</em> or <em>Swagger 2.0</em> specification. The template provides 12-factor compliant environment based config and integrated in linting. </p>\n<p>\n  <img src=\"https://raw.githubusercontent.com/cdimascio/kotlin-swagger-spring-functional-template/master/assets/logo.png\">\n</p>\n\n<h3>What&apos;s included?</h3>\n<ul>\n<li>Automatic request validation via <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator\">openapi-spring-webflux-validator</a></li>\n<li>Custom error responses via <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator\">openapi-spring-webflux-validator</a></li>\n<li>Environment based config via <a href=\"https://github.com/cdimascio/java-dotenv\">java-dotenv</a></li>\n<li>Interactive API documentation via <a href=\"https://swagger.io/swagger-ui/\">Swagger UI</a></li>\n<li>Automatic linting via <a href=\"ktlint.github.io\">ktlint</a></li>\n</ul>\n<p>Request validation and interactive documentation are based on an OpenApi 3.0 or Swagger v2 API specification. The specification is located at <code>main/resources/static/api.yaml</code>.</p>\n<h2>Install</h2>\n<p>Clone this repo</p>\n<h2>Build</h2>\n<pre>./gradlew build</pre><h2>Run</h2>\n<pre>./gradlew run</pre><h2>Lint</h2>\n<pre>## show lint errors\n./gradlew lintKotlin\n\n## Attempt to auto fix lint errors\n./gradlew formatKotlin</pre><h2>Test</h2>\n<pre>./gradlew test</pre><h2>Dist</h2>\n<pre>./gradlew clean distZip</pre><p>Output artifact located at <code>build/distributions</code></p>\n<p>or unpacked</p>\n<pre>./gradlew clean distZip unzip</pre><p>Output artifact located at <code>build/unpacked/dist</code></p>\n<h2>Run the standalone dist</h2>\n<p>Create an unpacked dist. See the <a href=\"#dist\">Dist</a> section above. Then run it</p>\n<pre>cp build/unpacked/dist $HOME/kotlin-swagger-spring-functional-1.0.0/bin/kotlin-swagger-spring-functional</pre><h2>Try It!</h2>\n<p><a href=\"#run\">Run</a> the app or run the <a href=\"#run-the-standalone-dist\">standalone dist</a>, then:</p>\n<pre>curl http://localhost:8888/api/users</pre><h3>Try the example endpoints (with swagger validation)</h3>\n<p>POST to <code>/users</code> with a <em>valid</em> request body</p>\n<pre>curl -X POST http://localhost:8888/api/users -H &quot;Content-Type: application/json&quot; -d &apos;{ &quot;firstname&quot;: &quot;carmine&quot;, &quot;lastname&quot;: &quot;dimascio&quot; }&apos;</pre><p>result</p>\n<pre>{\n  <span class=\"hljs-attr\">&quot;firstname&quot;</span>:<span class=\"hljs-string\">&quot;carmine&quot;</span>,\n  <span class=\"hljs-attr\">&quot;lastname&quot;</span>:<span class=\"hljs-string\">&quot;dimascio&quot;</span>\n}</pre><p>POST to <code>/users</code> with an <em>invalid</em> request body i.e. we leave off the required field <code>lastname</code></p>\n<pre>curl -X POST http://localhost:8888/api/users -H &quot;Content-Type: application/json&quot; -d &apos;{ &quot;firstname&quot;: &quot;carmine&quot; }&apos;</pre><p>result</p>\n<pre>{\n  <span class=\"hljs-attr\">&quot;errors&quot;</span>:[{\n    <span class=\"hljs-attr\">&quot;code&quot;</span>:<span class=\"hljs-string\">&quot;bad_request&quot;</span>,\n    <span class=\"hljs-attr\">&quot;message&quot;</span>:<span class=\"hljs-string\">&quot;Object has missing required properties ([\\&quot;lastname\\&quot;])&quot;</span>}\n]}</pre><h3>Try the Interactive API documentation</h3>\n<p>Navigate to <a href=\"http://localhost:8888\">http://localhost:8888</a></p>\n<p><img src=\"https://github.com/steklopod/Kotlin-with-WebFlux/blob/master/assets/swagger1.png?raw=true\"></p>\n<p><img src=\"https://github.com/steklopod/Kotlin-with-WebFlux/blob/master/assets/swagger2.png?raw=true\"></p>\n<h2>License</h2>\n<p><a href=\"LICENSE\">Apache 2</a></p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/steklopod/Kotlin-with-WebFlux",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/cdimascio",
+          "text": "cdimascio"
+        }
+      ]
+    }
+  ]
+}
